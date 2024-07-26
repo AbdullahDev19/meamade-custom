@@ -1,4 +1,4 @@
-import { useAdminStore } from "medusa-react"
+import { useAdminStore, useAdminGetSession } from "medusa-react"
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 
@@ -16,6 +16,9 @@ import TagIcon from "../../fundamentals/icons/tag-icon"
 import UsersIcon from "../../fundamentals/icons/users-icon"
 import SidebarMenuItem from "../../molecules/sidebar-menu-item"
 import UserMenu from "../../molecules/user-menu"
+import Dashboard from "../../fundamentals/icons/dashboard"
+import Analytics from "../../fundamentals/icons/analytics"
+import Personalizer from "../../fundamentals/icons/personalizer"
 
 const ICON_SIZE = 20
 
@@ -27,6 +30,8 @@ const Sidebar: React.FC = () => {
   const { store } = useAdminStore()
 
   const { getLinks } = useRoutes()
+
+  const { user } = useAdminGetSession()
 
   const triggerHandler = () => {
     const id = triggerHandler.id++
@@ -60,59 +65,7 @@ const Sidebar: React.FC = () => {
           </span>
         </div>
         <div className="py-3.5">
-          <SidebarMenuItem
-            pageLink={"/a/orders"}
-            icon={<CartIcon size={ICON_SIZE} />}
-            triggerHandler={triggerHandler}
-            text={t("sidebar-orders", "Orders")}
-          />
-          <SidebarMenuItem
-            pageLink={"/a/products"}
-            icon={<TagIcon size={ICON_SIZE} />}
-            text={t("sidebar-products", "Products")}
-            triggerHandler={triggerHandler}
-          />
-          {isFeatureEnabled("product_categories") && (
-            <SidebarMenuItem
-              pageLink={"/a/product-categories"}
-              icon={<SwatchIcon size={ICON_SIZE} />}
-              text={t("sidebar-categories", "Categories")}
-              triggerHandler={triggerHandler}
-            />
-          )}
-          <SidebarMenuItem
-            pageLink={"/a/customers"}
-            icon={<UsersIcon size={ICON_SIZE} />}
-            triggerHandler={triggerHandler}
-            text={t("sidebar-customers", "Customers")}
-          />
-          {inventoryEnabled && (
-            <SidebarMenuItem
-              pageLink={"/a/inventory"}
-              icon={<BuildingsIcon size={ICON_SIZE} />}
-              triggerHandler={triggerHandler}
-              text={t("sidebar-inventory", "Inventory")}
-            />
-          )}
-          <SidebarMenuItem
-            pageLink={"/a/discounts"}
-            icon={<SaleIcon size={ICON_SIZE} />}
-            triggerHandler={triggerHandler}
-            text={t("sidebar-discounts", "Discounts")}
-          />
-          <SidebarMenuItem
-            pageLink={"/a/gift-cards"}
-            icon={<GiftIcon size={ICON_SIZE} />}
-            triggerHandler={triggerHandler}
-            text={t("sidebar-gift-cards", "Gift Cards")}
-          />
-          <SidebarMenuItem
-            pageLink={"/a/pricing"}
-            icon={<CashIcon size={ICON_SIZE} />}
-            triggerHandler={triggerHandler}
-            text={t("sidebar-pricing", "Pricing")}
-          />
-          {getLinks().map(({ path, label, icon }, index) => {
+          {/* {getLinks().map(({ path, label, icon }, index) => {
             const cleanLink = path.replace("/a/", "")
 
             const Icon = icon ? icon : SquaresPlus
@@ -126,13 +79,96 @@ const Sidebar: React.FC = () => {
                 text={label}
               />
             )
-          })}
-          <SidebarMenuItem
-            pageLink={"/a/settings"}
-            icon={<GearIcon size={ICON_SIZE} />}
+          })} */}
+          {user?.role === "admin" && (
+            <SidebarMenuItem
+              pageLink={"/a/dashboard"}
+              icon={<Dashboard />}
+              triggerHandler={triggerHandler}
+              text={"Dashboard"}
+            />
+          )}
+          {user?.role === "admin" && (
+            <SidebarMenuItem
+              pageLink={"/a/analytics"}
+              icon={<Analytics />}
+              triggerHandler={triggerHandler}
+              text={"Analytics"}
+            />)}
+          {/* <SidebarMenuItem
+            pageLink={"/a/order"}
+            icon={<CartIcon size={ICON_SIZE} />}
             triggerHandler={triggerHandler}
-            text={t("sidebar-settings", "Settings")}
+            text={t("sidebar-orders", "Orders")}
+          /> */}
+          <SidebarMenuItem
+            pageLink={"/a/order"}
+            icon={<CartIcon size={ICON_SIZE} />}
+            triggerHandler={triggerHandler}
+            text={t("sidebar-orders", "Orders")}
           />
+          {user?.role === "admin" && (
+            <>
+              <SidebarMenuItem
+                pageLink={"/a/product"}
+                icon={<TagIcon size={ICON_SIZE} />}
+                text={t("sidebar-products", "Product")}
+                triggerHandler={triggerHandler}
+              />
+              <SidebarMenuItem
+                pageLink={"/a/personalizer"}
+                icon={<Personalizer />}
+                text={"Personalizer"}
+                triggerHandler={triggerHandler}
+              />
+              {isFeatureEnabled("product_categories") && (
+                <SidebarMenuItem
+                  pageLink={"/a/product-categories"}
+                  icon={<SwatchIcon size={ICON_SIZE} />}
+                  text={t("sidebar-categories", "Categories")}
+                  triggerHandler={triggerHandler}
+                />
+              )}
+              <SidebarMenuItem
+                pageLink={"/a/customers"}
+                icon={<UsersIcon size={ICON_SIZE} />}
+                triggerHandler={triggerHandler}
+                text={t("sidebar-customers", "Customers")}
+              />
+              {inventoryEnabled && (
+                <SidebarMenuItem
+                  pageLink={"/a/inventory"}
+                  icon={<BuildingsIcon size={ICON_SIZE} />}
+                  triggerHandler={triggerHandler}
+                  text={t("sidebar-inventory", "Inventory")}
+                />
+              )}
+              <SidebarMenuItem
+                pageLink={"/a/discounts"}
+                icon={<SaleIcon size={ICON_SIZE} />}
+                triggerHandler={triggerHandler}
+                text={t("sidebar-discounts", "Discounts")}
+              />
+              <SidebarMenuItem
+                pageLink={"/a/gift-cards"}
+                icon={<GiftIcon size={ICON_SIZE} />}
+                triggerHandler={triggerHandler}
+                text={t("sidebar-gift-cards", "Gift Cards")}
+              />
+              <SidebarMenuItem
+                pageLink={"/a/pricing"}
+                icon={<CashIcon size={ICON_SIZE} />}
+                triggerHandler={triggerHandler}
+                text={t("sidebar-pricing", "Pricing")}
+              />
+              <SidebarMenuItem
+                pageLink={"/a/settings"}
+                icon={<GearIcon size={ICON_SIZE} />}
+                triggerHandler={triggerHandler}
+                text={t("sidebar-settings", "Settings")}
+              />
+            </>
+          )}
         </div>
       </div>
     </div>

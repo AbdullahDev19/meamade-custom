@@ -726,7 +726,7 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
               onNext: () => {
                 setStepComplete({
                   step_id: "preview_product_nextjs",
-                  onComplete: () => navigate(`/a/orders`),
+                  onComplete: () => navigate(`/a/order`),
                 })
               },
             },
@@ -738,8 +738,8 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
                 setStepComplete({
                   step_id: "create_order_nextjs",
                   onComplete: () => {
-                    if (!location.pathname.startsWith(`/a/orders/${order.id}`)) {
-                      navigate(`/a/orders/${order.id}`)
+                    if (!location.pathname.startsWith(`/a/order/${order.id}`)) {
+                      navigate(`/a/order/${order.id}`)
                     }
                   },
                 })
@@ -776,7 +776,7 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
               onNext: () => {
                 setStepComplete({
                   step_id: "preview_product",
-                  onComplete: () => navigate(`/a/orders`),
+                  onComplete: () => navigate(`/a/order`),
                 })
               },
             },
@@ -788,8 +788,8 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
                 setStepComplete({
                   step_id: "create_order",
                   onComplete: () => {
-                    if (!location.pathname.startsWith(`/a/orders/${order.id}`)) {
-                      navigate(`/a/orders/${order.id}`)
+                    if (!location.pathname.startsWith(`/a/order/${order.id}`)) {
+                      navigate(`/a/order/${order.id}`)
                     }
                   },
                 })
@@ -880,7 +880,7 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
   // used to check if the user created an order and has entered its details page
   // the step is changed to the next one.
   useEffect(() => {
-    if (location.pathname.startsWith("/a/orders/order_") && isOrderCreateStep && "order" in props) {
+    if (location.pathname.startsWith("/a/order/order_") && isOrderCreateStep && "order" in props) {
       // change to the preview product step
       const currentStepIndex = findStepIndex(currentStep)
       steps[currentStepIndex].onNext?.(props.order)

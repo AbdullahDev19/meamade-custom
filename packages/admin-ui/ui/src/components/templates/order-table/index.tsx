@@ -142,7 +142,7 @@ const OrderTable = ({ setContextFilters }: OrderTableProps) => {
 
   const updateUrlFromFilter = (obj = {}) => {
     const stringified = qs.stringify(obj)
-    window.history.replaceState(`/a/orders`, "", `${`?${stringified}`}`)
+    window.history.replaceState(`/a/order`, "", `${`?${stringified}`}`)
   }
 
   const refreshWithFilters = () => {

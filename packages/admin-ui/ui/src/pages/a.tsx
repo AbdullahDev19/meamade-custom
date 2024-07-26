@@ -26,7 +26,7 @@ import { isRoute } from "../utils/extensions"
 
 const IndexPage = () => {
   const navigate = useNavigate()
-  useHotkeys("g + o", () => navigate("/a/orders"))
+  useHotkeys("g + o", () => navigate("/a/order"))
   useHotkeys("g + p", () => navigate("/a/products"))
 
   return (

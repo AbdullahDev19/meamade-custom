@@ -131,7 +131,7 @@ const InvitePage = () => {
         })
       }
 
-      navigate("/a/orders")
+      navigate("/a/order")
     } catch (err) {
       notification("Error", getErrorMessage(err), "error")
     }

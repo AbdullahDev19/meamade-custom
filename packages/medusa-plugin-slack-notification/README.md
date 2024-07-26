@@ -43,7 +43,7 @@ Receive new order notifications on Slack.
       options: {
         show_discount_code: false, // optional, whether the discount code should be shown in notifications
         slack_url: process.env.SLACK_WEBHOOK_URL,
-        admin_orders_url: process.env.SLACK_ADMIN_ORDERS_URL, // for example, http://localhost:7001/a/orders
+        admin_orders_url: process.env.SLACK_ADMIN_ORDERS_URL, // for example, http://localhost:7001/a/order
       },
     },
   ]

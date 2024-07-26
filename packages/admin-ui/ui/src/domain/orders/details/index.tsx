@@ -208,7 +208,7 @@ const OrderDetails = () => {
   })
 
   // @ts-ignore
-  useHotkeys("esc", () => navigate("/a/orders"))
+  useHotkeys("esc", () => navigate("/a/order"))
   useHotkeys("command+i", handleCopy)
 
   const { getWidgets } = useWidgets()
@@ -320,7 +320,7 @@ const OrderDetails = () => {
     <div>
       <OrderEditProvider orderId={id!}>
         <BackButton
-          path="/a/orders"
+          path="/a/order"
           label={t("details-back-to-orders", "Back to Orders")}
           className="mb-xsmall"
         />

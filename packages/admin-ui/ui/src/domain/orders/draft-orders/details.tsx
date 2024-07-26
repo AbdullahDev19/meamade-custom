@@ -209,7 +209,7 @@ const DraftOrderDetails = () => {
                     variant="secondary"
                     size="small"
                     onClick={() =>
-                      navigate(`/a/orders/${draft_order.order_id}`)
+                      navigate(`/a/order/${draft_order.order_id}`)
                     }
                   >
                     {t("draft-orders-go-to-order", "Go to Order")}

@@ -53,7 +53,7 @@ const DraftOrderIndex = () => {
               views={VIEWS}
               setActiveView={(v) => {
                 if (v === "orders") {
-                  navigate(`/a/orders`)
+                  navigate(`/a/order`)
                 }
               }}
               activeView={view}

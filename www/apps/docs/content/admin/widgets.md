@@ -1219,7 +1219,7 @@ const ProductWidget = () => {
     <div
       className="bg-white p-8 border border-gray-200 rounded-lg">
       <h1>Product Widget</h1>
-      <Link to={"/a/orders"}>
+      <Link to={"/a/order"}>
         View Orders
       </Link>
     </div>

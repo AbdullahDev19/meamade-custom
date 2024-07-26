@@ -33,7 +33,7 @@ const LoginCard = ({ toResetPassword }: LoginCardProps) => {
   const onSubmit = (values: FormValues) => {
     mutate(values, {
       onSuccess: () => {
-        navigate("/a/orders")
+        navigate("/a/order")
       },
       onError: () => {
         setError(

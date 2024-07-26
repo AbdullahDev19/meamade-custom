@@ -29,7 +29,7 @@ const OrderResults = ({
               })}
             >
               <Link
-                to={`/a/orders/${order.id}`}
+                to={`/a/order/${order.id}`}
                 className="px-base rounded-rounded flex items-center justify-between py-1.5"
               >
                 <div className="flex items-center gap-x-3">

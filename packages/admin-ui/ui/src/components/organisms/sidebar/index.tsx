@@ -51,11 +51,12 @@ const Sidebar: React.FC = () => {
   return (
     <div className="min-w-sidebar max-w-sidebar bg-gray-0 border-grey-20 py-base px-base h-screen overflow-y-auto border-r">
       <div className="h-full">
+      {user?.role === "admin" && (
         <div className="flex justify-between px-2">
           <div className="rounded-circle flex h-8 w-8 items-center justify-center border border-solid border-gray-300">
             <UserMenu />
           </div>
-        </div>
+        </div>)}
         <div className="my-base flex flex-col px-2">
           <span className="text-grey-50 text-small font-medium">
             {t("sidebar-store", "Store")}

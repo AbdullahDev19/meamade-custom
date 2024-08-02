@@ -1,4 +1,4 @@
-import { useAdminLogin } from "medusa-react"
+import { useAdminLogin,useAdminGetSession } from "medusa-react"
 import { useForm } from "react-hook-form"
 import { useNavigate } from "react-router-dom"
 import { useWidgets } from "../../../providers/widget-provider"
@@ -32,8 +32,12 @@ const LoginCard = ({ toResetPassword }: LoginCardProps) => {
 
   const onSubmit = (values: FormValues) => {
     mutate(values, {
-      onSuccess: () => {
-        navigate("/a/order")
+      onSuccess: ({user}) => {
+        if(user?.role === "admin")
+          navigate("/a/dashboard")
+        else {
+          navigate("/a/order")
+        }
       },
       onError: () => {
         setError(

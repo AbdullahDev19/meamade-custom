@@ -45,6 +45,7 @@ const UserMenu: React.FC = () => {
           side="bottom"
           className="ml-large rounded-rounded border-grey-20 bg-grey-0 p-xsmall shadow-dropdown z-30 min-w-[200px] border"
         >
+      {user?.role === "admin" && (
           <DropdownMenu.Item className="mb-1 outline-none">
             <Button
               variant="ghost"
@@ -55,7 +56,7 @@ const UserMenu: React.FC = () => {
               <GearIcon />
               Settings
             </Button>
-          </DropdownMenu.Item>
+          </DropdownMenu.Item>)}
           <DropdownMenu.Item className="outline-none">
             <Button
               variant="ghost"

@@ -19,6 +19,7 @@ import UserMenu from "../../molecules/user-menu"
 import Dashboard from "../../fundamentals/icons/dashboard"
 import Analytics from "../../fundamentals/icons/analytics"
 import Personalizer from "../../fundamentals/icons/personalizer"
+import BulkOrder from "../../fundamentals/icons/bulkorder"
 
 const ICON_SIZE = 20
 
@@ -119,6 +120,12 @@ const Sidebar: React.FC = () => {
                 pageLink={"/a/personalizer"}
                 icon={<Personalizer />}
                 text={"Personalizer"}
+                triggerHandler={triggerHandler}
+              />
+              <SidebarMenuItem
+                pageLink={"/a/bulkorder"}
+                icon={<BulkOrder />}
+                text={"Bulk Orders"}
                 triggerHandler={triggerHandler}
               />
               {isFeatureEnabled("product_categories") && (

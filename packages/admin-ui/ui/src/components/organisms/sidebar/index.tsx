@@ -20,6 +20,7 @@ import Dashboard from "../../fundamentals/icons/dashboard"
 import Analytics from "../../fundamentals/icons/analytics"
 import Personalizer from "../../fundamentals/icons/personalizer"
 import BulkOrder from "../../fundamentals/icons/bulkorder"
+import PickupRequests from "../../fundamentals/icons"
 
 const ICON_SIZE = 20
 
@@ -126,6 +127,12 @@ const Sidebar: React.FC = () => {
                 pageLink={"/a/bulkorder"}
                 icon={<BulkOrder />}
                 text={"Bulk Orders"}
+                triggerHandler={triggerHandler}
+              />
+              <SidebarMenuItem
+                pageLink={"/a/shipmentlist"}
+                icon={<PickupRequests />}
+                text={"Pick Requests"}
                 triggerHandler={triggerHandler}
               />
               {isFeatureEnabled("product_categories") && (

@@ -151,7 +151,7 @@ const CollectionDetails = () => {
       <div className="flex flex-col">
         <BackButton
           className="mb-xsmall"
-          path="/a/products?view=collections"
+          path="/a/product?view=collections"
           label={t("details-back-to-collections", "Back to Collections")}
         />
         <div className="gap-y-xsmall flex flex-col">
@@ -199,9 +199,9 @@ const CollectionDetails = () => {
                   <h3 className="inter-base-semibold">
                     {t("details-metadata", "Metadata")}
                   </h3>
-                  <div>
+                  {/* <div>
                     <JSONView data={collection.metadata} />
-                  </div>
+                  </div> */}
                 </div>
               )}
             </div>
@@ -243,10 +243,10 @@ const CollectionDetails = () => {
             )
           })}
 
-          <RawJSON
+          {/* <RawJSON
             data={collection}
             title={t("details-raw-collection", "Raw collection")}
-          />
+          /> */}
         </div>
         <Spacer />
       </div>

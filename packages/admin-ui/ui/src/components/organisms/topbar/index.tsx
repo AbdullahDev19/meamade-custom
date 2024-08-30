@@ -31,27 +31,27 @@ const Topbar: React.FC = () => {
     <div className="min-h-topbar max-h-topbar pr-xlarge pl-base bg-grey-0 border-grey-20 flex w-full items-center justify-between border-b">
       <SearchBar />
       <div className="flex items-center">
-        <Button
+        {/* <Button
           size="small"
           variant="ghost"
           className="mr-3 h-8 w-8"
           onClick={() => setShowSupportForm(!showSupportform)}
         >
           <HelpCircleIcon size={24} />
-        </Button>
+        </Button> */}
 
-        <NotificationBell
+        {/* <NotificationBell
           onClick={onNotificationBellClick}
           variant={"ghost"}
           hasNotifications={!!batchJobs?.length}
-        />
+        /> */}
       </div>
-      {showSupportform && (
+      {/* {showSupportform && (
         <MailDialog
           open={showSupportform}
           onClose={() => setShowSupportForm(false)}
         />
-      )}
+      )} */}
       {activityDrawerState && (
         <ActivityDrawer onDismiss={activityDrawerClose} />
       )}

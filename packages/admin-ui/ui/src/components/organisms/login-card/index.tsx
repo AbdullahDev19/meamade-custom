@@ -32,12 +32,12 @@ const LoginCard = ({ toResetPassword }: LoginCardProps) => {
 
   const onSubmit = (values: FormValues) => {
     mutate(values, {
-      onSuccess: ({user}) => {
-        if(user?.role === "admin")
-          navigate("/a/dashboard")
-        else {
+      onSuccess: ({user}:any) => {
+        // if(user?.role === "admin")
+        //   navigate("/a/dashboard")
+        // else {
           navigate("/a/order")
-        }
+        // }
       },
       onError: () => {
         setError(
@@ -71,7 +71,7 @@ const LoginCard = ({ toResetPassword }: LoginCardProps) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col items-center">
           <h1 className="inter-xlarge-semibold text-grey-90 mb-large text-[20px]">
-            {"Log in to MeaMade"}
+            {"Log in to CustomZ"}
           </h1>
           <div>
             <SigninInput

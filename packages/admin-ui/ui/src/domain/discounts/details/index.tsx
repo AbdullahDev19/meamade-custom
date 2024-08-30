@@ -122,10 +122,10 @@ const Edit = () => {
               />
             )
           })}
-          <RawJSON
+          {/* <RawJSON
             data={discount}
             title={t("details-raw-discount", "Raw discount")}
-          />
+          /> */}
         </DiscountFormProvider>
       </div>
     </div>

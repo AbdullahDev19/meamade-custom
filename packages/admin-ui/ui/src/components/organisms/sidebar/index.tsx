@@ -135,6 +135,12 @@ const Sidebar: React.FC = () => {
                 text={"Pick Requests"}
                 triggerHandler={triggerHandler}
               />
+              <SidebarMenuItem
+                pageLink={"/a/newsletter"}
+                icon={<SwatchIcon size={ICON_SIZE} />}
+                text={"Newsletter"}
+                triggerHandler={triggerHandler}
+              />
               {isFeatureEnabled("product_categories") && (
                 <SidebarMenuItem
                   pageLink={"/a/product-categories"}

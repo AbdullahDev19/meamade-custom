@@ -168,10 +168,10 @@ const CustomerDetail = () => {
           )
         })}
 
-        <RawJSON
+        {/* <RawJSON
           data={customer}
           title={t("details-raw-customer", "Raw customer")}
-        />
+        /> */}
       </div>
 
       {showEdit && customer && (

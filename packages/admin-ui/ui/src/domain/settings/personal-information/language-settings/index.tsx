@@ -14,15 +14,12 @@ const LanguageSettings = () => {
             </h2>
           </div>
           <p className="inter-base-regular text-grey-50">
-            {t(
-              "personal-information-language-settings-description",
-              "Adjust the language of Medusa Admin"
-            )}
+            {"Adjust the language of CustomZ Admin"}
           </p>
         </div>
         <LanguageMenu />
       </div>
-      <div className="mt-small">
+      {/* <div className="mt-small">
         <a
           href="/"
           target="_blank"
@@ -34,7 +31,7 @@ const LanguageSettings = () => {
             "Help us translate"
           )}
         </a>
-      </div>
+      </div> */}
     </>
   )
 }

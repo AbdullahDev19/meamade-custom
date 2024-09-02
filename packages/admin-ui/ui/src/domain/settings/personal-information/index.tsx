@@ -27,10 +27,7 @@ const PersonalInformation = () => {
             )}
           </h1>
           <p className="inter-base-regular text-grey-50">
-            {t(
-              "personal-information-manage-your-medusa-profile",
-              "Manage your Medusa profile"
-            )}
+              {"Manage your CustomZ profile"}
           </p>
         </div>
         <div className="flex flex-col">
@@ -40,11 +37,11 @@ const PersonalInformation = () => {
           <div className="border-grey-20 py-xlarge border-t">
             <LanguageSettings />
           </div>
-          {isFeatureEnabled("analytics") && (
+          {/* {isFeatureEnabled("analytics") && (
             <div className="border-grey-20 py-xlarge border-t">
               <UsageInsights user={user} />
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>

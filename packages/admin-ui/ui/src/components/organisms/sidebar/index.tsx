@@ -130,6 +130,12 @@ const Sidebar: React.FC = () => {
                 triggerHandler={triggerHandler}
               />
               <SidebarMenuItem
+                pageLink={"/a/custominventory"}
+                icon={<TagIcon size={ICON_SIZE} />}
+                text={"Manage Inventory"}
+                triggerHandler={triggerHandler}
+              />
+              <SidebarMenuItem
                 pageLink={"/a/shipmentlist"}
                 icon={<PickupRequests />}
                 text={"Pick Requests"}

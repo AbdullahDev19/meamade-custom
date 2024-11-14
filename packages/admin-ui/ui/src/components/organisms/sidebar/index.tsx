@@ -147,6 +147,12 @@ const Sidebar: React.FC = () => {
                 text={"Newsletter"}
                 triggerHandler={triggerHandler}
               />
+              <SidebarMenuItem
+                pageLink={"/a/rating"}
+                icon={<TagIcon size={ICON_SIZE} />}
+                text={"Rating"}
+                triggerHandler={triggerHandler}
+              />
               {isFeatureEnabled("product_categories") && (
                 <SidebarMenuItem
                   pageLink={"/a/product-categories"}

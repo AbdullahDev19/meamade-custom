@@ -90,13 +90,13 @@ const Sidebar: React.FC = () => {
               text={"Dashboard"}
             />
           )} */}
-          {/* {user?.role === "admin" && (
+          {user?.role === "admin" && (
             <SidebarMenuItem
               pageLink={"/a/analytics"}
               icon={<Analytics />}
               triggerHandler={triggerHandler}
               text={"Analytics"}
-            />)} */}
+            />)}
           {/* <SidebarMenuItem
             pageLink={"/a/order"}
             icon={<CartIcon size={ICON_SIZE} />}
